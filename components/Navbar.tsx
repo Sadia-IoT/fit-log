@@ -1,18 +1,28 @@
+import Image from "next/image";
+import Link from "next/link";
 const Navbar = () => {
   return (
     <nav className="border-b border-zinc-800 bg-black text-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-lime-400">
-          FITLOG
-        </h1>
+        <div className="flex items-center gap-2">
+  <Image
+    src="/logo.png"
+    alt="FitLog logo"
+    className="h-8 w-8"
+  />
+
+  <span className="text-2xl font-bold text-white">
+    FITLOG
+  </span>
+</div>
 
         {/* Navigation */}
         <div className="flex items-center gap-8">
-          <a href="/" className="text-lime-400">
+          <Link href="/" className="text-lime-400">
             Workout
-          </a>
+          </Link>
 
           <a href="/my-plan" className="text-zinc-300 hover:text-lime-400">
             My Plan
