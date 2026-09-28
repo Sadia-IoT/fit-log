@@ -10,6 +10,8 @@ const Navbar = () => {
   <Image
     src="/logo.png"
     alt="FitLog logo"
+     width={32}
+     height={32}
     className="h-8 w-8"
   />
 
