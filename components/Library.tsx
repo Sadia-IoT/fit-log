@@ -53,13 +53,16 @@ export default async function Library() {
               className="overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D]"
             >
               {/* Image */}
-              <Image 
+              <div className="aspect-[16/10] w-full overflow-hidden sm:aspect-[4/3]">
+               <Image 
                 src={workout.image}
                 alt={workout.name}
                  width={500}
                  height={300}
-                className="h-52 w-full object-cover"
+                className="h-full w-full object-cover"
               />
+              </div>
+             
 
               <div className="p-5">
                 {/* Badges */}
