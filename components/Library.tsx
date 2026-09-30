@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 type Workout = {
   id: number;
   name: string;
@@ -31,16 +32,13 @@ export default async function Library() {
       <div className="container mx-auto px-4">
         {/* Section heading */}
         <div className="mb-10">
-          <p className="text-sm font-semibold tracking-widest text-green-500">
-            THE LIBRARY
-          </p>
 
           <h2 className="mt-2 text-3xl font-bold text-white md:text-4xl">
-            Explore Your Workouts
+            THE LIBRARY
           </h2>
 
           <p className="mt-3 max-w-2xl text-slate-300">
-            Discover workouts that help you stay active, build strength, and
+            Discover workouts that help you stay active, build strength and
             achieve your fitness goals.
           </p>
         </div>
@@ -48,12 +46,13 @@ export default async function Library() {
         {/* Workout cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {workouts.map((workout) => (
-            <div
-              key={workout.id}
-              className="overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D]"
-            >
+          <Link
+  href={`/workouts/${workout.id}`}
+  key={workout.id}
+  className="block overflow-hidden rounded-2xl border border-[#222630] bg-[#15171D] transition hover:-translate-y-1 hover:border-slate-500"
+>
               {/* Image */}
-              <div className="aspect-[16/10] w-full overflow-hidden sm:aspect-[4/3]">
+              <div className="aspect-16/10 w-full overflow-hidden sm:aspect-4/3">
                <Image 
                 src={workout.image}
                 alt={workout.name}
@@ -67,11 +66,11 @@ export default async function Library() {
               <div className="p-5">
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-lime-400 px-3 py-1 text-xs font-bold text-black">
+                  <span className="rounded-full bg-[#C2F800] px-3 py-1 text-xs font-bold text-black">
                     {workout.muscleGroups[0]}
                   </span>
 
-                  <span className="rounded-full bg-lime-400 px-3 py-1 text-xs font-bold text-black">
+                  <span className="rounded-full bg-[#C2F800] px-3 py-1 text-xs font-bold text-black">
                     {workout.difficulty}
                   </span>
                 </div>
@@ -95,7 +94,7 @@ export default async function Library() {
                   <span>⭐ {workout.rating}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

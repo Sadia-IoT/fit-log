@@ -6,7 +6,7 @@ const Hero = () => {
 
         {/* Left */}
         <div className="max-w-xl">
-          <p className="mt-4 mb-4 text-sm font-semibold tracking-[0.3em] text-lime-400">
+          <p className="mt-4 mb-4 text-sm font-semibold tracking-[0.3em] text-[#C2F800]">
             WORKOUT LIBRARY
           </p>
 
@@ -23,7 +23,7 @@ const Hero = () => {
 
           <a
             href="#library"
-            className="mt-8 inline-block rounded-full bg-lime-400 px-6 py-3 font-semibold text-black transition hover:bg-lime-300"
+            className="mt-8 inline-block rounded-full bg-[#C2F800] px-6 py-3 font-semibold text-black transition hover:bg-lime-300"
           >
             BROWSE WORKOUTS →
           </a>
